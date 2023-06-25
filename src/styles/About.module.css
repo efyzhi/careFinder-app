@@ -1,0 +1,10 @@
+.about {
+    position: relative;
+    min-height: 100vh;
+    padding: 700px 40px;
+    margin-top: 7rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  
