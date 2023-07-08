@@ -40,10 +40,11 @@ const useFirestore = ({collectionName}: UseFirestoreProps): UseFirestoreResult =
     };
 
     fetchDocuments();
-  }, [collectionName]);
+  }, ['hospitals']);
+
     const createDocument = async( data:any) => {
         try {
-            const docRef = await addDoc(collection(db, collectionName), data);
+            const docRef = await addDoc(collection(db, 'hospitals'), data);
             console.log('Document created with ID:', docRef.id)
         } catch (error) {
             console.error('Erro creating document:', error)
@@ -54,7 +55,7 @@ const useFirestore = ({collectionName}: UseFirestoreProps): UseFirestoreResult =
     
     const updateDocument = async(docId: string, data: any) => {
         try {
-            const docRef = doc(collection(db, collectionName, docId));
+            const docRef = doc(collection(db, 'hospitals', docId));
             await updateDoc(docRef, data)
                 console.log('Document updated with ID:', docId);
         } catch (error) {
@@ -62,9 +63,10 @@ const useFirestore = ({collectionName}: UseFirestoreProps): UseFirestoreResult =
         }
     }
     
+    // delete docs
     const deleteDocument = async( docId: string) => {
         try {
-            const docRef = doc(collection(db, collectionName, docId));
+            const docRef = doc(collection(db, 'hospitals', docId));
             await deleteDoc(docRef)
                 console.log('Document deleted with ID:', docId);
         } catch (error) {
