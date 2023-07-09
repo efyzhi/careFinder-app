@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/Home.module.css";
 import { Link } from 'react-router-dom';
 import ExportComps from "../comps/ExportComps";
+// import ShareHospitals from "../comps/ShareHospitals";
 
 
 const Home: React.FC = () => {
@@ -37,6 +38,8 @@ const Home: React.FC = () => {
           <h3>Share Hospital Information</h3>
           <p>Share hospital details with others via email or shareable links.</p>
         </div>
+        {/* <ShareHospitals /> */}
+
       </section>
 
       <section className={styles.testimonials}>

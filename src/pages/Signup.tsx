@@ -24,6 +24,8 @@ const Signup = () => {
         <input {...register("email", { required: true })} />
         <label>Password:</label>
         <input {...register("password", { required: true })} />
+        <label>Confirm Password:</label>
+        <input {...register("password", { required: true })} />
         <button type="submit">Register</button>
       </form>
     </>
