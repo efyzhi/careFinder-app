@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
-import styles from '../styles/FindHospital.module.css'
-
+import styles from "../styles/FindHospital.module.css";
+import ExportComps from "../comps/ExportComps";
+// import ShareComps from "../comps/ShareComps";
 
 interface Hospital {
   id: string;
@@ -17,6 +18,11 @@ const FindHospital: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [hospitals, setHospitals] = useState<Hospital[]>([]);
   const [loading, setLoading] = useState(false);
+  const [selectedHospital, setSelectedHospital] = useState<Hospital | null>(
+    null
+  );
+  const [showExport, setShowExport] = useState(false);
+  // const [showShare, setShowShare] = useState(false);
 
   useEffect(() => {
     const fetchHospitals = async () => {
@@ -51,16 +57,23 @@ const FindHospital: React.FC = () => {
   };
 
   return (
-    <div  className={styles.container}>
+    <div className={styles.container}>
       <h2>Hospital Search</h2>
-      <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search by location" />
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleSearch}
+        placeholder="Search by location"
+      />
       {loading ? (
         <p>Loading...</p>
       ) : hospitals.length > 0 ? (
         <ul>
           {hospitals.map((hospital) => (
             <li key={hospital.id}>
-              <h3>{hospital.name}</h3>
+              <h3 onClick={() => setSelectedHospital(hospital)}>
+                {hospital.name}
+              </h3>
               <p>{hospital.location}</p>
               <p>{hospital.address}</p>
               <p>{hospital.contact}</p>
@@ -70,6 +83,17 @@ const FindHospital: React.FC = () => {
         </ul>
       ) : (
         <p>No hospitals found.</p>
+      )}
+
+      {selectedHospital && (
+        <>
+          <ExportComps
+            hospital={selectedHospital}
+            showExport={showExport}
+            setShowExport={setShowExport}
+          />
+          {/* <ShareComps hospital={selectedHospital} showShare={showShare} setShowShare={setShowShare} /> */}
+        </>
       )}
     </div>
   );
