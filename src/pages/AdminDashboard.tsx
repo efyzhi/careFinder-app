@@ -10,7 +10,7 @@ interface IFormInput {
 }
 
 const AdminDashboard: React.FC = () => {
-  const { documents, loading, createDocument } = useFirestore({ collectionName: 'hospitals' });
+  const { createDocument } = useFirestore({ collectionName: 'hospitals' });
 
   const { register, handleSubmit, reset } = useForm<IFormInput>();
 
