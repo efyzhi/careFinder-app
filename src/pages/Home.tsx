@@ -12,7 +12,7 @@ const Home: React.FC = () => {
         <div className={styles.heroContent}>
           <h1>Find the Best Hospitals Near You</h1>
           <p>With Carefinder, easily search for hospitals in your region and access important contact details.</p>
-          <Link to="/search" className={styles.ctaButton}>Get Started</Link>
+          <Link to="/find" className={styles.ctaButton}>Get Started</Link>
         </div>
         <div className={styles.heroImage}>
           <img src="/images/hero-image.png" alt="Hospital search" />

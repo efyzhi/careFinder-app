@@ -1,0 +1,40 @@
+.container {
+    margin: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  p {
+    margin-bottom: 5px;
+  }
+  

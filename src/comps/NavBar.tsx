@@ -27,7 +27,7 @@ const NavBar: React.FC = () => {
               <Link to={"/signup"}>Sign up</Link>
             </li>
             <li>
-              <Link to={"/dashboard"}> Dashboard</Link>
+              {/* <Link to={"/dashboard"}> Dashboard</Link> */}
             </li>
           </ul>
         </nav>
