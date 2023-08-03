@@ -20,19 +20,11 @@ Carefinder is built using modern web development practices and technologies to e
 
 - Frontend: The application is built using either Vue.js or React with TypeScript, ensuring type safety and improved developer productivity. The codebase follows proper linting and formatting guidelines with Prettier and Eslint.
 
-- Backend: The backend is implemented using forecast, which allows storing user data and carrying out authentication. Firebase is used for user authentication and built-in file storage to export the list of hospitals as CSV files.
+- Backend: The backend is implemented using firebase, which allows storing user data and carrying out authentication. Firebase is used for user authentication and built-in file storage to export the list of hospitals as CSV files.
 
 - Form Validation: The application enforces form validation to ensure that user inputs are accurate and complete, improving the overall user experience.
 
 - Testing: The codebase includes at least 2 unit tests and 3 component tests to maintain code quality and prevent regressions during development.
 
-## Getting Started
 
-To run Carefinder locally, follow these steps:
-
-1. Clone the repository to your local machine.
-2. Install the necessary dependencies using the package manager of your choice.
-3. Run the application using the development server command.
-4. Access the application on your preferred web browser.
-
-Please note that some features, such as sharing hospitals and exporting hospitals, are currently under development and will be available in future updates.
+Please note that some features, such as sharing hospitals and exporting hospitals, are currently under development. 
